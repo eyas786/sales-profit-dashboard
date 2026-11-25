@@ -1,0 +1,24 @@
+import matplotlib.pyplot as plt
+months=["jan","feb","mar","apr","may"]
+sales=[75,50,35,85,66]
+profit=[34,21,13,41,32]
+sign=["a","b","c"]
+score=[55,34,12]
+fig,dshb=plt.subplots(2,2,figsize=(10,10))
+dshb[0,0].plot(months,sales)
+dshb[0,0].set_title("sales")
+dshb[0,1].scatter(months,profit)
+dshb[0,1].set_title("profit")
+dshb[1,0].bar(months,sales)
+dshb[1,0].set_title("sales")
+dshb[1,1].pie(score,
+              labels=sign,
+              autopct="%.0f%%",
+              colors=["red","green","blue"],
+              explode=[0,0.1,0],
+              )
+dshb[1,1].set_title("pie")
+plt.tight_layout()
+fig.suptitle("dashboard")
+plt.savefig("dashboard.png")
+plt.show()
